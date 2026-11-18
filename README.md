@@ -2,9 +2,9 @@
 
 # Práctica 4: Modelado y control del sistema endócrino
 
-Repositorio académico de la asignatura **Modelado de Sistemas Fisiológicos**, correspondiente al programa de **Ingeniería Biomédica** del Tecnológico Nacional de México / Instituto Tecnológico de Tijuana. Esta práctica integra el modelado eléctrico de segundo orden mediante un circuito RLC, la deducción analítica de ecuaciones integro-diferenciales y función de transferencia, el análisis de estabilidad en lazo abierto, la simulación computacional *in silico* (MATLAB, Simulink, Simscape y Python), la verificación experimental en osciloscopio y el diseño de un controlador PI para la compensación de alteraciones en el sistema endócrino.
+Repositorio académico de la asignatura **Modelado de Sistemas Fisiológicos**, correspondiente al programa de **Ingeniería Biomédica** del Tecnológico Nacional de México / Instituto Tecnológico de Tijuana. Esta práctica integra el modelado eléctrico de segundo orden mediante un circuito RLC, la deducción analítica de ecuaciones integro-diferenciales y función de transferencia, el análisis de estabilidad en lazo abierto, la simulación computacional *in silico* (MATLAB, Simulink, Simscape y Python), la verificación experimental en osciloscopio y el diseño de un controlador PID para la compensación de alteraciones en el sistema endócrino.
 
-El caso de estudio representa la **dinámica de regulación hormonal del sistema endócrino** mediante un circuito eléctrico equivalente $R_1 R_2 L C$ de dos mallas. Se compara la respuesta fisiológica en un individuo sano (**Control**) frente a una condición de disfunción endócrina (**Caso**), implementando un controlador PI en lazo cerrado que corrige el error en estado estacionario y recupera la trayectoria normal.
+El caso de estudio representa la **dinámica de regulación hormonal del sistema endócrino** mediante un circuito eléctrico equivalente $R_1 R_2 L C$ de dos mallas. Se compara la respuesta fisiológica en un individuo sano (**Control**) frente a una condición de disfunción endócrina (**Caso**), implementando un controlador PID en lazo cerrado que corrige el error en estado estacionario y recupera la trayectoria normal.
 
 **Docente:** Dr. Paul Antonio Valle Trujillo  
 **Correo:** paul.valle@tectijuana.edu.mx · paul.vt@tijuana.tecnm.mx  
@@ -31,7 +31,7 @@ El caso de estudio representa la **dinámica de regulación hormonal del sistema
 6. [Análisis temporal y de estabilidad](#analisis)
 7. [Señales de entrada y condiciones de simulación](#senales)
 8. [Implementación en MATLAB, Simulink y Simscape](#matlab)
-9. [Control en lazo cerrado y sintonización PI](#PI)
+9. [Control en lazo cerrado y sintonización PID](#PID)
 10. [Reproducción en Python](#python)
 11. [Resultados y verificación cruzada](#resultados)
 12. [Flujo de trabajo](#flujo)
@@ -48,9 +48,9 @@ El caso de estudio representa la **dinámica de regulación hormonal del sistema
 
 La práctica tuvo como propósito **modelar, analizar y controlar la respuesta dinámica del sistema endócrino** mediante experimentación *in silico* y validación experimental. La regulación glandular y hormonal se representó mediante un **circuito RLC** de dos mallas compuesto por una resistencia de entrada ($R_1$), un capacitor en derivación ($C$), una inductancia ($L$) y una resistencia de carga ($R_2$).
 
-A partir de las leyes de Kirchhoff se formularon las ecuaciones integro-diferenciales del sistema y se obtuvo su función de transferencia de segundo orden $G(s) = \frac{V_s(s)}{V_e(s)}$. Ante una excitación de **escalón unitario**, se evaluó la ubicación de los polos y el error en estado estacionario en condición normal (**Control**, $e_{ss} = 0.0099$) frente a una alteración endócrina (**Caso**, $e_{ss} = 0.5$), caracterizada por un incremento en la capacitancia $C$ y una disminución en la resistencia $R_2$. Finalmente, se sintonizó e implementó un **controlador PI con retroalimentación negativa** para compensar la respuesta del caso patológico, verificando la consistencia entre MATLAB/Simulink, Simscape Electrical, Python y la medición física en osciloscopio.
+A partir de las leyes de Kirchhoff se formularon las ecuaciones integro-diferenciales del sistema y se obtuvo su función de transferencia de segundo orden $G(s) = \frac{V_s(s)}{V_e(s)}$. Ante una excitación de **escalón unitario**, se evaluó la ubicación de los polos y el error en estado estacionario en condición normal (**Control**, $e_{ss} = 0.0099$) frente a una alteración endócrina (**Caso**, $e_{ss} = 0.5$), caracterizada por un incremento en la capacitancia $C$ y una disminución en la resistencia $R_2$. Finalmente, se sintonizó e implementó un **controlador PID con retroalimentación negativa** para compensar la respuesta del caso patológico, verificando la consistencia entre MATLAB/Simulink, Simscape Electrical, Python y la medición física en osciloscopio.
 
-**Palabras clave:** Circuito RLC; Controlador PI; Sistema endócrino; Modelo matemático; Simulaciones numéricas.
+**Palabras clave:** Circuito RLC; Controlador PID; Sistema endócrino; Modelo matemático; Simulaciones numéricas.
 
 [Volver al contenido](#contenido)
 
@@ -61,11 +61,11 @@ A partir de las leyes de Kirchhoff se formularon las ecuaciones integro-diferenc
 
 ### Competencia a desarrollar
 
-Modelizar sistemas fisiológicos mediante analogías entre sistemas físicos, ecuaciones diferenciales y funciones de transferencia para analizar su comportamiento dinámico y diseñar estrategias de control mediante técnicas de control clásico. En particular, analizar un modelo eléctrico de segundo orden del sistema endócrino, comparar la respuesta de un individuo sano (control) con un caso simulado de disfunción endócrina (caso) y diseñar una estrategia de control PI *in silico* orientada a eliminar las diferencias entre ambas respuestas.
+Modelizar sistemas fisiológicos mediante analogías entre sistemas físicos, ecuaciones diferenciales y funciones de transferencia para analizar su comportamiento dinámico y diseñar estrategias de control mediante técnicas de control clásico. En particular, analizar un modelo eléctrico de segundo orden del sistema endócrino, comparar la respuesta de un individuo sano (control) con un caso simulado de disfunción endócrina (caso) y diseñar una estrategia de control PID *in silico* orientada a eliminar las diferencias entre ambas respuestas.
 
 ### Objetivo general
 
-Formular el modelo matemático del sistema endócrino mediante un circuito eléctrico equivalente $R_1 R_2 L C$, simular su respuesta dinámica en lazo abierto ante una entrada escalón unitario para condiciones de salud y patología, y diseñar un sistema de control PI en lazo cerrado que compense la alteración fisiológica.
+Formular el modelo matemático del sistema endócrino mediante un circuito eléctrico equivalente $R_1 R_2 L C$, simular su respuesta dinámica en lazo abierto ante una entrada escalón unitario para condiciones de salud y patología, y diseñar un sistema de control PID en lazo cerrado que compense la alteración fisiológica.
 
 ### Objetivos específicos
 
@@ -73,7 +73,7 @@ Formular el modelo matemático del sistema endócrino mediante un circuito eléc
 - Derivar analíticamente la función de transferencia $G(s) = \frac{V_s(s)}{V_e(s)}$ en el dominio de Laplace.
 - Evaluar la ubicación de las raíces características ($\lambda_1, \lambda_2$), el amortiguamiento y el error en estado estacionario ($e_{ss}$) para Control y Caso.
 - Implementar y simular ambas condiciones en MATLAB, Simulink y Simscape Electrical (`endocrino.slx`) ante una entrada escalón unitario.
-- Sintonizar las ganancias ($k_P, k_I$) de un controlador PI que elimine el error en estado estacionario del Caso patológico.
+- Sintonizar las ganancias ($k_P, k_I, k_D$) de un controlador PID que elimine el error en estado estacionario del Caso patológico.
 - Reproducir el comportamiento dinámico en lazo abierto y lazo cerrado mediante el script de Python `Gomez23212196.py`.
 - Elaborar el esquema fisiológico en BioRender (`Biorender.jpg`) y registrar la respuesta experimental del circuito mediante captura de osciloscopio (`Endócrino_lab.jpg`).
 
@@ -90,7 +90,7 @@ La práctica integró contenidos correspondientes a las unidades temáticas de l
 |---|---|---|
 | I | Sistemas de control retroalimentados | Diagramas de bloques, respuesta al escalón unitario, error en estado estacionario ($e_{ss}$) y análisis de estabilidad mediante polos |
 | II | Modelado matemático | Modelado de circuitos RLC de dos mallas, ecuaciones integro-diferenciales y funciones de transferencia de segundo orden |
-| III | Controladores | Controladores PI, sintonización de ganancias y sistemas de compensación *in silico* |
+| III | Controladores | Controladores PID, sintonización de ganancias y sistemas de compensación *in silico* |
 
 [Volver al contenido](#contenido)
 
@@ -238,8 +238,8 @@ El cuaderno computacional `Gomez23212196.mlx` ejecuta las simulaciones, extrae l
 
 ---
 
-<a id="PI"></a>
-## Control en lazo cerrado y sintonización PI
+<a id="PID"></a>
+## Control en lazo cerrado y sintonización PID
 
 ### 1. Esquema de control
 
@@ -248,20 +248,21 @@ Se diseñó una estructura de control retroalimentada donde la respuesta del ind
 ```mermaid
 flowchart LR
     R["Vs(t): Control"] -->|"+"| SUM(("Σ"))
-    SUM --> PI["Controlador PI"]
-    PI --> CASE["FT: Caso"]
-    CASE --> OUTPUT["PI(t): Tratamiento"]
+    SUM --> PID["Controlador PID"]
+    PID --> CASE["FT: Caso"]
+    CASE --> OUTPUT["PID(t): Tratamiento"]
     OUTPUT -->|"- "| SUM
 ```
 
 ### 2. Sintonización de ganancias
 
-Mediante la herramienta **Tune** del bloque `PI Controller` en Simulink, se sintonizaron las ganancias del controlador para el modelo patológico (registradas en `Ganancias.jpg`):
+Mediante la herramienta **Tune** del bloque `PID Controller` en Simulink, se sintonizaron las ganancias del controlador para el modelo patológico (registradas en `Ganancias.jpg`):
 
-- Ganancia Proporcional ($k_P$): *Valor sintonizado en PI Tune*
-- Ganancia Integral ($k_I$): *Valor sintonizado en PI Tune*
-
-El controlador PI implementado obliga al sistema patológico a eliminar por completo el error en estado estacionario del $50\%$ presente en el **Caso**, logrando que la salida del tratamiento siga la trayectoria de referencia.
+- Ganancia Proporcional ($k_P$): *Valor sintonizado en PID Tune*
+- Ganancia Integral ($k_I$): *Valor sintonizado en PID Tune*
+- Ganancia Diferencial ($k_D$): *Valor sintonizado en PID Tune*
+  
+El controlador PID implementado obliga al sistema patológico a eliminar por completo el error en estado estacionario del $50\%$ presente en el **Caso**, logrando que la salida del tratamiento siga la trayectoria de referencia.
 
 [Volver al contenido](#contenido)
 
@@ -274,7 +275,7 @@ Mediante el script independiente en Python (`Gomez23212196.py`) y las librerías
 
 1. Definición de las funciones de transferencia $G_{\text{control}}(s)$ y $G_{\text{caso}}(s)$.
 2. Simulación de la respuesta al escalón unitario ante la señal de entrada $V_e(t)$.
-3. Implementación del lazo cerrado con las ganancias $k_P$ y $k_I$ sintonizadas.
+3. Implementación del lazo cerrado con las ganancias $k_P$, $k_I$ y $k_D$ sintonizadas.
 4. Exportación gráfica a `Endócrino_python.pdf`.
 
 [Volver al contenido](#contenido)
@@ -289,7 +290,7 @@ En los archivos `Endócrino_matlab.pdf` y `Endócrino_python.pdf` se presentan d
 - **Señal de entrada $V_e(t)$:** Escalón unitario aplicado al sistema endócrino.
 - **Respuesta de Control $V_s(t)$:** Comportamiento dinámico del individuo sano, alcanzando prácticamente el valor de referencia ($e_{ss} = 0.0099$).
 - **Respuesta de Caso $V_s(t)$:** Respuesta del sistema con disfunción endócrina en lazo abierto, evidenciando una atenuación severa ($e_{ss} = 0.5$) y una respuesta transitoria lenta.
-- **Tratamiento PI:** Respuesta del sistema patológico compensado en lazo cerrado, eliminando el error estacionario y superponiéndose a la respuesta de Control.
+- **Tratamiento PID:** Respuesta del sistema patológico compensado en lazo cerrado, eliminando el error estacionario y superponiéndose a la respuesta de Control.
 
 <p align="center">
   <img src="Endócrino_lab.jpg" alt="Captura de osciloscopio en laboratorio" width="700"/>
@@ -301,10 +302,10 @@ En los archivos `Endócrino_matlab.pdf` y `Endócrino_python.pdf` se presentan d
 
 | Condición | MATLAB / Simulink | Python |
 |---|---|---|
-| Respuesta dinámica y PI | `Endócrino_matlab.pdf` | `Endócrino_python.pdf` |
+| Respuesta dinámica y PID | `Endócrino_matlab.pdf` | `Endócrino_python.pdf` |
 
 - Demostración matemática: `Análisis matemático P4.pdf`
-- Evidencia de sintonización PI: `Ganancias.jpg`
+- Evidencia de sintonización PID: `Ganancias.jpg`
 - Captura experimental en osciloscopio: `Endócrino_lab.jpg`
 - Esquema biológico: `Biorender.jpg`
 
@@ -324,7 +325,7 @@ flowchart TD
     A --> F[Simscape Electrical: Circuito RLC]
     E --> G[Respuesta al Escalón Unitario: Control vs Caso]
     F --> G
-    C --> H[Diseño de Controlador PI con Referencia Control]
+    C --> H[Diseño de Controlador PID con Referencia Control]
     H --> I[Sintonización en Simulink y registro en Ganancias.jpg]
     I --> J[Simulación en Lazo Cerrado]
     C --> K[Python: Gomez23212196.py]
@@ -352,10 +353,10 @@ flowchart TD
 - [x] Implementar la representación por ecuaciones y función de transferencia en Simulink (`endocrino.slx`).
 - [x] Obtener la respuesta temporal al escalón unitario para Control y Caso en lazo abierto.
 
-### Etapa 3. Control PI y compensación
+### Etapa 3. Control PID y compensación
 
 - [x] Configurar el lazo cerrado tomando la respuesta de Control como referencia.
-- [x] Sintonizar el controlador PI mediante la herramienta Tune y registrar $k_P, k_I$ en `Ganancias.jpg`.
+- [x] Sintonizar el controlador PID mediante la herramienta Tune y registrar $k_P, k_I, k_D$ en `Ganancias.jpg`.
 - [x] Ejecutar el cuaderno de MATLAB (`Gomez23212196.mlx`) y exportar a PDF (`Gomez23212196.pdf` y `Endócrino_matlab.pdf`).
 - [x] Reproducir la simulación en Python con el script `Gomez23212196.py` y generar `Endócrino_python.pdf`.
 
@@ -382,7 +383,7 @@ flowchart TD
 ├── Endócrino_lab.jpg              # Captura de osciloscopio de la respuesta experimental
 ├── Endócrino_matlab.pdf           # Gráfica de respuesta obtenida en MATLAB
 ├── Endócrino_python.pdf           # Gráfica de respuesta obtenida en Python
-├── Ganancias.jpg                  # Evidencia de sintonización de ganancias PI (PID Tune)
+├── Ganancias.jpg                  # Evidencia de sintonización de ganancias PID (PIDD Tune)
 ├── Gomez23212196.mlx              # Cuaderno MATLAB de simulación
 ├── Gomez23212196.pdf              # Exportación en PDF del cuaderno MATLAB
 ├── Gomez23212196.py               # Script de simulación en Python
@@ -417,7 +418,7 @@ flowchart TD
 |---|---|
 | Formulación matemática | Ecuaciones de malla, función de transferencia, polos y $e_{ss}$ en `Análisis matemático P4.pdf` |
 | Simulación lazo abierto | Comparación gráfica ante escalón unitario entre Control y Caso en `Endócrino_matlab.pdf` |
-| Sintonización PI | Ganancias $k_P, k_I$ en `Ganancias.jpg` y gráfico de tratamiento PI |
+| Sintonización PID | Ganancias $k_P, k_I, k_D$ en `Ganancias.jpg` y gráfico de tratamiento PID |
 | Código Python | Script funcional `Gomez23212196.py` y gráfica `Endócrino_python.pdf` |
 | Diagrama biológico | Esquema fisiológico del sistema endócrino en `Biorender.jpg` |
 | Evidencia experimental | Captura de osciloscopio de la respuesta física en `Endócrino_lab.jpg` |
