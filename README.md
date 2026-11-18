@@ -260,7 +260,7 @@ Mediante la herramienta **Tune** del bloque `PID Controller` en Simulink, se sin
 
 - Ganancia Proporcional ($k_P$): *Valor sintonizado en PID Tune*
 - Ganancia Integral ($k_I$): *Valor sintonizado en PID Tune*
-- Ganancia Diferencial ($k_D$): *Valor sintonizado en PID Tune*
+- Ganancia Derivativa ($k_D$): *Valor sintonizado en PID Tune*
   
 El controlador PID implementado obliga al sistema patológico a eliminar por completo el error en estado estacionario del $50\%$ presente en el **Caso**, logrando que la salida del tratamiento siga la trayectoria de referencia.
 
