@@ -102,7 +102,7 @@ La práctica integró contenidos correspondientes a las unidades temáticas de l
 <p align="center">
   <img src="Biorender.jpg" alt="Diagrama Biológico en BioRender" width="700"/>
   <br>
-  <em>Figura 1: Esquema fisiológico y circuito equivalente del sistema endócrino diseñado en BioRender.</em>
+  <em>Figura 1: Esquema fisiológico del sistema endócrino diseñado en BioRender.</em>
 </p>
 
 El sistema endócrino se modeló mediante un circuito eléctrico de dos mallas con corrientes $i_1(t)$ e $i_2(t)$, excitado por una fuente de voltaje $V_e(t)$ en serie con $R_1$, un capacitor $C$ en derivación entre ambas mallas, y una rama de salida formada por el inductor $L$ en serie con la resistencia $R_2$, donde se mide la respuesta $V_s(t)$.
