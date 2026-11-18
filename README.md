@@ -204,11 +204,11 @@ $$e_{ss} = \lim_{s \to 0} s V_e(s) \left[1 - G(s)\right] = 1 - \frac{R_2}{R_1 + 
 
 - **Error en Control:**
 
-$$e_{ss} = 1 - \frac{100\,000}{1000 + 100\,000} = 0.0099 \quad (0.99\%)$$
+$$e_{ss} = 1 - \frac{100\,000}{1000 + 100\,000} = 0.0099 \quad $$
 
 - **Error en Caso:**
 
-$$e_{ss} = 1 - \frac{1000}{1000 + 1000} = 0.5 \quad (50\%)$$
+$$e_{ss} = 1 - \frac{1000}{1000 + 1000} = 0.5 \quad $$
 
 [Volver al contenido](#contenido)
 
@@ -231,7 +231,6 @@ Se construyeron e implementaron las representaciones equivalentes del sistema en
 
 1. **Ecuaciones integro-diferenciales:** Bloques de suma, ganancia, integradores y derivadores en Simulink.
 2. **Función de transferencia:** Bloque `Transfer Fcn` evaluando $G(s) = \frac{L s + R_2}{(R_1 C L) s^2 + (R_1 R_2 C + L) s + R_1 + R_2}$.
-3. **Circuito equivalente (Simscape):** Componentes físicos $R_1$, $R_2$, $L$ y $C$ de *Simscape Electrical*.
 
 El cuaderno computacional `Gomez23212196.mlx` ejecuta las simulaciones, extrae las variables al *Workspace* y exporta los resultados a `Gomez23212196.pdf` y `Endócrino_matlab.pdf`.
 
@@ -351,7 +350,6 @@ flowchart TD
 ### Etapa 2. Simulación *in silico* de la planta
 
 - [x] Implementar la representación por ecuaciones y función de transferencia en Simulink (`endocrino.slx`).
-- [x] Implementar el circuito RLC equivalente en Simscape Electrical.
 - [x] Obtener la respuesta temporal al escalón unitario para Control y Caso en lazo abierto.
 
 ### Etapa 3. Control PI y compensación
@@ -379,7 +377,7 @@ flowchart TD
 ├── README.md                      # Reporte principal de la práctica
 ├── CITATION.cff                   # Archivo de citación del repositorio
 ├── LICENSE                        # Licencia del repositorio
-├── Análisis matemático P4.pdf    # Demostración matemática analítica del circuito RLC
+├── Análisis matemático P4.pdf     # Demostración matemática analítica del circuito RLC
 ├── Biorender.jpg                  # Diagrama fisiológico del sistema endócrino
 ├── Endócrino_lab.jpg              # Captura de osciloscopio de la respuesta experimental
 ├── Endócrino_matlab.pdf           # Gráfica de respuesta obtenida en MATLAB
@@ -401,8 +399,7 @@ flowchart TD
 ### Software
 
 - **MATLAB** y **Simulink** (con *Control System Toolbox*).
-- **Simscape Electrical**.
-- **Python 3.x** (con librerías `numpy`, `scipy`, `matplotlib`, `control`).
+- **Python 3.14** (con librerías `numpy`, `scipy`, `matplotlib`, `control`).
 - **Visual Studio Code**.
 - **BioRender** (para la elaboración del diagrama biológico `Biorender.jpg`).
 - **Git y GitHub**.
