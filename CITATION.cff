@@ -2,7 +2,7 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: 'Práctica 0: Sistema pulmonar de segundo orden'
+title: 'Práctica 4: Modelado y control del sistema endócrino'
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -12,13 +12,13 @@ authors:
     family-names: Gómez
     email: l23212196@tijuana.tecnm.mx
     affiliation: TecNM / IT Tijuana
-repository-code: 'https://github.com/EmiCrack132/MSFP0'
+repository-code: 'https://github.com/EmiCrack132/MSFP4'
 keywords:
   - Circuito RLC
-  - Controlador PID
-  - Sistema respiratorio
+  - Controlador PI
+  - Sistema endócrino
   - Modelo matemático
   - Simulaciones numéricas
 license: BSD-2-Clause
 version: '1.0'
-date-released: '2026-09-11'
+date-released: '2026-11-17'
