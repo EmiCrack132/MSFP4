@@ -75,7 +75,7 @@ Formular el modelo matemático del sistema endócrino mediante un circuito eléc
 - Implementar y simular ambas condiciones en MATLAB, Simulink y Simscape Electrical (`endocrino.slx`) ante una entrada escalón unitario.
 - Sintonizar las ganancias ($k_P, k_I, k_D$) de un controlador PID que elimine el error en estado estacionario del Caso patológico.
 - Reproducir el comportamiento dinámico en lazo abierto y lazo cerrado mediante el script de Python `Gomez23212196.py`.
-- Elaborar el esquema fisiológico en BioRender (`Biorender.jpg`) y registrar la respuesta experimental del circuito mediante captura de osciloscopio (`Endócrino_lab.jpg`).
+- Elaborar el esquema fisiológico en BioRender (`Biorender.jpeg`) y registrar la respuesta experimental del circuito mediante captura de osciloscopio (`Endócrino_lab.jpg`).
 
 [Volver al contenido](#contenido)
 
@@ -100,7 +100,7 @@ La práctica integró contenidos correspondientes a las unidades temáticas de l
 ## Modelo físico y analogía electromecánica
 
 <p align="center">
-  <img src="Biorender.jpg" alt="Diagrama Biológico en BioRender" width="700"/>
+  <img src="Biorender.jpeg" alt="Diagrama Biológico en BioRender" width="700"/>
   <br>
   <em>Figura 1: Esquema fisiológico y circuito equivalente del sistema endócrino diseñado en BioRender.</em>
 </p>
@@ -307,7 +307,7 @@ En los archivos `Endócrino_matlab.pdf` y `Endócrino_python.pdf` se presentan d
 - Demostración matemática: `Análisis matemático P4.pdf`
 - Evidencia de sintonización PID: `Ganancias.jpg`
 - Captura experimental en osciloscopio: `Endócrino_lab.jpg`
-- Esquema biológico: `Biorender.jpg`
+- Esquema biológico: `Biorender.jpeg`
 
 [Volver al contenido](#contenido)
 
@@ -331,7 +331,7 @@ flowchart TD
     C --> K[Python: Gomez23212196.py]
     J --> L[Verificación Cruzada de Resultados]
     K --> L
-    L --> M[Captura en Osciloscopio Endócrino_lab.jpg y Diagrama Biorender.jpg]
+    L --> M[Captura en Osciloscopio Endócrino_lab.jpg y Diagrama Biorender.jpeg]
     M --> N[Documentación final en GitHub y README.md]
 ```
 
@@ -362,7 +362,7 @@ flowchart TD
 
 ### Etapa 4. Documentación, diagrama biológico y evidencia experimental
 
-- [x] Elaborar el diagrama fisiológico del sistema endócrino en BioRender (`Biorender.jpg`).
+- [x] Elaborar el diagrama fisiológico del sistema endócrino en BioRender (`Biorender.jpeg`).
 - [x] Registrar la respuesta experimental del circuito físico mediante captura de osciloscopio (`Endócrino_lab.jpg`).
 - [x] Publicar la versión final en GitHub con los archivos `LICENSE` y `CITATION.cff`.
 
@@ -379,7 +379,7 @@ flowchart TD
 ├── CITATION.cff                   # Archivo de citación del repositorio
 ├── LICENSE                        # Licencia del repositorio
 ├── Análisis matemático P4.pdf     # Demostración matemática analítica del circuito RLC
-├── Biorender.jpg                  # Diagrama fisiológico del sistema endócrino
+├── Biorender.jpeg                  # Diagrama fisiológico del sistema endócrino
 ├── Endócrino_lab.jpg              # Captura de osciloscopio de la respuesta experimental
 ├── Endócrino_matlab.pdf           # Gráfica de respuesta obtenida en MATLAB
 ├── Endócrino_python.pdf           # Gráfica de respuesta obtenida en Python
@@ -402,7 +402,7 @@ flowchart TD
 - **MATLAB** y **Simulink** (con *Control System Toolbox*).
 - **Python 3.14** (con librerías `numpy`, `scipy`, `matplotlib`, `control`).
 - **Visual Studio Code**.
-- **BioRender** (para la elaboración del diagrama biológico `Biorender.jpg`).
+- **BioRender** (para la elaboración del diagrama biológico `Biorender.jpeg`).
 - **Git y GitHub**.
 
 [Volver al contenido](#contenido)
@@ -420,7 +420,7 @@ flowchart TD
 | Simulación lazo abierto | Comparación gráfica ante escalón unitario entre Control y Caso en `Endócrino_matlab.pdf` |
 | Sintonización PID | Ganancias $k_P, k_I, k_D$ en `Ganancias.jpg` y gráfico de tratamiento PID |
 | Código Python | Script funcional `Gomez23212196.py` y gráfica `Endócrino_python.pdf` |
-| Diagrama biológico | Esquema fisiológico del sistema endócrino en `Biorender.jpg` |
+| Diagrama biológico | Esquema fisiológico del sistema endócrino en `Biorender.jpeg` |
 | Evidencia experimental | Captura de osciloscopio de la respuesta física en `Endócrino_lab.jpg` |
 | Documentación | Repositorio GitHub con `README.md` estructurado, `LICENSE` y `CITATION.cff` |
 
